@@ -2,8 +2,10 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>شوخی با رفیق</title>
   <style>
+    /* تنظیمات کلی */
     body {
       font-family: Tahoma, sans-serif;
       background-color: #FF0000; /* پس‌زمینه قرمز */
@@ -15,15 +17,18 @@
       align-items: center;
       text-align: center;
     }
-    
+
+    /* استایل فرم */
     #mainContent {
       background-color: #000;
-      padding: 30px;
+      padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      width: 300px;
+      width: 90%;
+      max-width: 400px;
     }
 
+    /* استایل متن نتیجه */
     #result {
       display: none;
       color: white;
@@ -33,6 +38,7 @@
       margin-top: 20px;
     }
 
+    /* استایل input و button */
     input {
       padding: 10px;
       font-size: 18px;
@@ -56,13 +62,47 @@
     button:hover {
       background-color: #555;
     }
+
+    /* مدیا کوئری برای نمایش بهتر در گوشی */
+    @media (max-width: 768px) {
+      #mainContent {
+        width: 90%;
+        padding: 15px;
+      }
+
+      #result {
+        font-size: 40px; /* تنظیم اندازه فونت برای گوشی‌های موبایل */
+      }
+
+      input {
+        font-size: 16px; /* تغییر اندازه فونت input */
+      }
+
+      button {
+        font-size: 16px; /* تغییر اندازه دکمه برای گوشی */
+      }
+    }
+
+    @media (max-width: 480px) {
+      #result {
+        font-size: 36px; /* سایز کوچکتر در صفحه‌های موبایل */
+      }
+
+      input {
+        font-size: 14px; /* تغییر سایز فونت برای گوشی‌های کوچک‌تر */
+      }
+
+      button {
+        font-size: 14px; /* تغییر اندازه دکمه برای گوشی‌های کوچک‌تر */
+      }
+    }
   </style>
 </head>
 <body>
 
   <div id="mainContent">
-    <h2>اسم‌تو وارد کن:</h2>
-    <input type="text" id="nameInput" placeholder="اسم خودت رو وارد کن">
+    <h2>نام ته نوشته فال ته ببینم:</h2>
+    <input type="text" id="nameInput" placeholder="نام خودت رو وارد کن">
     <br>
     <button onclick="showMessage()">تأیید</button>
   </div>
